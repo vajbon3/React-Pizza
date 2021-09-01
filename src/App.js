@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router} from 'react-router-dom';
+import { GlobalStyle } from "./GlobalStyles";
+import Hero from "./components/Hero";
+import { productData, productDataTwo} from "./components/Products/data";
+import Products from "./components/Products/index";
+import Feature from './components/Feature';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <GlobalStyle />
+      <Hero/>
+      <Products heading="Choose your favorite" data={productData}/>
+      <Feature />
+      <Products heading="Sweet Treats for you" data={productDataTwo} />
+      <Footer />
+    </Router>
   );
 }
 
